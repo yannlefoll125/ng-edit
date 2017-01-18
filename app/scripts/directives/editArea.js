@@ -3,6 +3,7 @@ app.directive('editArea', [function() {
 		restrict: 'E',
 		link: function(scope, element, attrs) {
 
+
 			var ta = element.find('textarea')[0];
 			scope.selectedText = "";
 
@@ -10,6 +11,7 @@ app.directive('editArea', [function() {
 
 			scope.mouseup = scope.keyup = function() {
 				console.log("ngMouseup");
+
 				scope.selectedText = getSelectedText(ta);
 
 			}
@@ -19,8 +21,10 @@ app.directive('editArea', [function() {
 			}
 
 		},
-		template: `<textarea ng-model="t" ng-mouseup="mouseup()" ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" class="edit-area-textarea"></textarea>
-					<p>Selected text: <br />
-					{{selectedText}}</p>`
+		template: `<textarea ng-model="t" ng-mouseup="mouseup()" 
+					ng-change="textEditTextAreaChanged(t)"
+					ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" 
+					class="edit-area-textarea"></textarea>
+					`
 	};
 }]);
