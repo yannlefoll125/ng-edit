@@ -1,9 +1,15 @@
 app.controller('previewPanelCtrl', ['$scope', 'textModel', function($scope, textModel){
 
 	$scope.text = "";
-	textModel.registerObserverCallback(function() {
-		console.log("PP: text changed in the model");
-		$scope.text = textModel.getText();
+	textModel.registerObserverCallback(function(eventName) {
+		
+		switch(eventName) {
+			case "text-model":
+				$scope.text = textModel.getText();
+				break;
+
+		}
+
 	});
 
 

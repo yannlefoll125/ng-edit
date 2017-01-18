@@ -15,9 +15,9 @@ app.service('textModel', function() {
 		}
 	}
 
-	this.notifyObservers = function() {
+	this.notifyObservers = function(eventName) {
 		for(let callback of this.observerCallbacks) {
-			callback();
+			callback(eventName);
 
 		}
 	}
@@ -31,7 +31,7 @@ app.service('textModel', function() {
 
 	this.setText = function(text) {
 		this.text = text;
-		this.notifyObservers();
+		this.notifyObservers("text-model");
 	}
 
 	
