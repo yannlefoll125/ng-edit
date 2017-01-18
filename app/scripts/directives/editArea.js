@@ -21,8 +21,9 @@ app.directive('editArea', [function() {
 			}
 
 		},
-		template: `<textarea ng-model="t" ng-mouseup="mouseup()" 
+		template: `<textarea ng-model="t"
 					ng-change="textEditTextAreaChanged(t)"
+					ng-mouseup="mouseup()"
 					ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" 
 					class="edit-area-textarea"></textarea>
 					`

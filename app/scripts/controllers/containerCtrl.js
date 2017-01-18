@@ -1,4 +1,4 @@
-app.controller('xxx', ['$scope', function($scope){
+app.controller('containerCtrl', ['$scope', function($scope){
 
 	
 }]);

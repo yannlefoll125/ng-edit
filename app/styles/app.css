@@ -1,3 +1,11 @@
+.panel {
+	float: left;
+	margin: 10px;
+}
+
+
+
 .edit-area-textarea {
 	height: 300px;
+
 }
