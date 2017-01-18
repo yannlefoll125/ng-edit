@@ -18,15 +18,8 @@ app.directive('editArea', [function() {
 				return textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
 			}
 
-			/*scope.$watch(scope.t, function(newValue, oldValue) {
-				console.log('watch: selectedText: ' + oldValue);
-				console.log('watch: selectedText: ' + newValue);
-			});*/
-
-
-
 		},
-		template: `<textarea ng-model="t" ng-mouseup="mouseup()" ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()"></textarea>
+		template: `<textarea ng-model="t" ng-mouseup="mouseup()" ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" class="edit-area-textarea"></textarea>
 					<p>Selected text: <br />
 					{{selectedText}}</p>`
 	};
