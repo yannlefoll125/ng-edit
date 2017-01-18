@@ -24,6 +24,7 @@ app.service('textModel', function() {
 
 	this.text = "";
 
+	this.selectionBounds = [0, 0];
 	this.getText = function() {
 
 		return this.text;
@@ -33,6 +34,7 @@ app.service('textModel', function() {
 		this.text = text;
 		this.notifyObservers("text-model");
 	}
+
 
 	this.style = function (arg) {
 		// body...
@@ -51,8 +53,13 @@ app.service('textModel', function() {
 			default:
 				// statements_def
 				break;
+			}
 		}
 		//return true;
+		this.setSelectionBounds = function(start, end) {
+		//console.log("model: setSelectionBounds (" + start + ", " + end + ")");
+		this.selectionBounds = [start, end];
+
 	}
 
 	

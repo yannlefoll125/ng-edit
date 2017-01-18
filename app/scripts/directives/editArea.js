@@ -5,19 +5,13 @@ app.directive('editArea', [function() {
 
 
 			var ta = element.find('textarea')[0];
-			scope.selectedText = "";
 
 			scope.t = "initial text\nline 2";
 
 			scope.mouseup = scope.keyup = function() {
-				console.log("ngMouseup");
 
-				scope.selectedText = getSelectedText(ta);
+				scope.selectionChanged(ta.selectionStart, ta.selectionEnd);
 
-			}
-
-			getSelectedText = function(textarea) {
-				return textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
 			}
 
 		},
