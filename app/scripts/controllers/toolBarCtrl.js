@@ -1,15 +1,14 @@
 app.controller('toolBarCtrl', ['$scope','textModel', function($scope,textModel){
 	$scope.bold = function(){
-		textModel.style('b');
+		textModel.onStyleSelection('b');
 	}
 
 	$scope.italic = function () {
-		textModel.style('i');
+		textModel.onStyleSelection('i');
 		
 	}
-	
 
 	$scope.underline = function () {
-		textModel.style('u');
+		textModel.onStyleSelection('u');
 	}
 }])

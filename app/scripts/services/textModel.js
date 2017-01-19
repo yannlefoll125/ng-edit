@@ -43,19 +43,22 @@ app.service('textModel', function() {
 	}
 
 
-	this.style = function (arg) {
+	this.onStyleSelection = function (arg) {
 		// body...
 		console.log(arg);
 
 		switch (arg) {
 			case 'b':
 				console.log('bold');
+				this.applyStyle('s-bold');
 				break;
 			case 'i':
 				console.log('italic');
+				this.applyStyle('s-italic');
 				break;
 			case 'u':
 				console.log('under');
+				this.applyStyle('s-under');
 				break;
 			default:
 				// statements_def
@@ -64,16 +67,31 @@ app.service('textModel', function() {
 		}
 		//return true;
 		this.setSelectionBounds = function(start, end) {
-		//console.log("model: setSelectionBounds (" + start + ", " + end + ")");
+		console.log("model: setSelectionBounds (" + start + ", " + end + ")");
 		this.selectionBounds = [start, end];
 
-	}
+	};
 
-	this.getStyle = function() {
-		return {};
-	}
+	this.applyStyle = function(styleClass) {
+		let strLength = this.text.length;
+		let beforeStr = this.text.substring(0, this.selectionBounds[0]);
+		let innerStr = this.text.substring(this.selectionBounds[0], this.selectionBounds[1]);
+		let afterStr = this.text.substring(this.selectionBounds[1], strLength);
 
-	
+		console.log("before: " + beforeStr);
+		console.log("inner: " + innerStr);
+		console.log("after: " + afterStr);
+
+		let htmlStr = beforeStr + `<span class="${styleClass}">`;
+		htmlStr += innerStr + '</span>' + afterStr;
+
+		console.log(htmlStr);
+
+		this.setText(htmlStr);
+
+
+
+	}
 
 
 });

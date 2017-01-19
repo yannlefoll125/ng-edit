@@ -3,7 +3,6 @@ app.directive('editArea', [function() {
 		restrict: 'E',
 		link: function(scope, element, attrs) {
 
-
 			var ta = element.find('textarea')[0];
 
 			scope.mouseup = scope.keyup = function() {
@@ -13,7 +12,7 @@ app.directive('editArea', [function() {
 			}
 
 		},
-		template: `<textarea ng-model="t"
+		template: `<textarea ng-model="$parent.t"
 					ng-change="textEditTextAreaChanged(t)"
 					ng-mouseup="mouseup()"
 					ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" 
