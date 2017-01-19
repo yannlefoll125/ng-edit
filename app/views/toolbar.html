@@ -1,15 +1,24 @@
 <div class="toolbar widget">
 	<div class="toolbar-left">
 		<ul>
-			<li><button ng-click="bold();"><B>G</B></button></li>
+			<li><button ng-click="bold();"><B>B</B></button></li>
 			<li><button ng-click="italic();"><I>I</I></button></li>
-			<li><button ng-click="underline();"><U>S</U></button></li>
+			<li><button ng-click="underline();"><U>U</U></button></li>
 		</ul>
 
 	</div>
+
+	
+
 	<div class="toolbar-right">
 		<button class="fullscreen-button" ng-if="!fullscreen" ng-click="onFullscreenClick()">Fullscreen</button>
 		<button class="fullscreen-button" ng-if="fullscreen" ng-click="onFullscreenClick()">Normal view</button>
+	</div>
+
+	<div class="toolbar-right">
+		<button class="maxmin-button" ng-if="maxmin == 0" ng-click="onMaxMinClick()">Both Panels</button>
+		<button class="maxmin-button" ng-if="maxmin == 1" ng-click="onMaxMinClick()">Only Edit</button>
+		<button class="maxmin-button" ng-if="maxmin == 2" ng-click="onMaxMinClick()">Only Preview</button>
 	</div>
 
 	<div class="clear"></div>
