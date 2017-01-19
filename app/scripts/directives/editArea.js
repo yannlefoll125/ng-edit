@@ -6,8 +6,6 @@ app.directive('editArea', [function() {
 
 			var ta = element.find('textarea')[0];
 
-			scope.t = "initial text\nline 2";
-
 			scope.mouseup = scope.keyup = function() {
 
 				scope.selectionChanged(ta.selectionStart, ta.selectionEnd);
@@ -19,6 +17,7 @@ app.directive('editArea', [function() {
 					ng-change="textEditTextAreaChanged(t)"
 					ng-mouseup="mouseup()"
 					ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" 
+					placeholder="Type your text here"
 					class="edit-area-textarea"></textarea>
 					`
 	};

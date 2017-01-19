@@ -1,15 +1,14 @@
-
 .panel {
 	float: left;
 	margin: 10px;
 }
 
-
-
 .edit-area-textarea {
 	height: 300px;
+	width: 400px;
 
 }
+
 button{
 	width:30px;
 	height:30px;
@@ -19,6 +18,7 @@ button{
 	border:none;
 	color:#fff;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -27,7 +27,16 @@ ul {
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 }
+
 li {
     float: left;
 
 }
+
+.preview-display {
+	height: 288px;
+	width: 388px;
+	border: 1px black solid;
+	padding: 5px;
+}
+

@@ -24,10 +24,17 @@ app.service('textModel', function() {
 
 	this.text = "";
 
+
 	this.selectionBounds = [0, 0];
 	this.getText = function() {
 
 		return this.text;
+	}
+
+	this.getHtmlText = function() {
+		let HTMLstr = this.text.split('\n').join('<br />');
+
+		return HTMLstr;
 	}
 
 	this.setText = function(text) {
@@ -60,6 +67,10 @@ app.service('textModel', function() {
 		//console.log("model: setSelectionBounds (" + start + ", " + end + ")");
 		this.selectionBounds = [start, end];
 
+	}
+
+	this.getStyle = function() {
+		return {};
 	}
 
 	
