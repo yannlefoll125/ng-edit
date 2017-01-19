@@ -9,8 +9,18 @@
 
 }
 
-button{
+#style-button{
 	width:30px;
+	height:30px;
+	background:#cc0000;
+	font:bold 13px Arial;
+	border-radius:50%;
+	border:none;
+	color:#fff;
+}
+
+.reduce-button{
+	width:60px;
 	height:30px;
 	background:#cc0000;
 	font:bold 13px Arial;
@@ -38,5 +48,9 @@ li {
 	width: 388px;
 	border: 1px black solid;
 	padding: 5px;
+}
+.reduceStyle{
+	width: 2px;
+	height: 2px;
 }
 

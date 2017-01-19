@@ -1,5 +1,14 @@
 app.controller('editPanelCtrl', ['$scope', 'textModel', function($scope, textModel) {
 
+	$scope.reduceExtend=true;
+
+	$scope.onButtonChange = function () {
+		// body...
+
+		$scope.reduceExtend= !$scope.reduceExtend;
+		console.log('click');
+	}
+
 	$scope.textEditTextAreaChanged = function(newValue) {
 
 		textModel.setText(newValue);
@@ -14,5 +23,4 @@ app.controller('editPanelCtrl', ['$scope', 'textModel', function($scope, textMod
 		textModel.setSelectionBounds(selectionStart, selectionEnd);
 
 	};
-
 }]);

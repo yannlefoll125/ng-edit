@@ -1,5 +1,9 @@
 <div class="edit-panel panel">
-	<h3>Edit panel</h3>
-	<edit-area></edit-area>	
+	<h3>Edit panel :: {{reduceExtend}}</h3>	
+	<button ng-if="reduceExtend" class="reduce-button"  ng-click="onButtonChange()">reduire</button>
+	<button ng-if="!reduceExtend" class="reduce-button"  ng-click="onButtonChange()">agrandir</button>
+
+	<edit-area></edit-area>
+
 
 </div>
