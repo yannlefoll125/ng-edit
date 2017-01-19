@@ -34,6 +34,18 @@ app.service('textModel', function() {
 		this.notifyObservers("text-model");
 	}
 
+	this.style = function (arg) {
+		// body...
+		console.log(arg)
+		if (arg='b') {console.log('bold');}
+
+		if (arg='i') {console.log('italic');}
+
+		if (arg='u') {console.log('under');}
+		
+		//return true;
+	}
+
 	
 
 
