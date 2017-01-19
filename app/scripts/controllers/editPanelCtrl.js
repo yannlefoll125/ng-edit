@@ -4,8 +4,17 @@ app.controller('editPanelCtrl', ['$scope', 'textModel', function($scope, textMod
 
 	$scope.onButtonChange = function () {
 		// body...
+		if ($scope.reduceExtend) {
 
+			$scope.reduceStyle={ width:'0px', height:'0px'}
+
+		} else {
+
+			$scope.reduceStyle={ width:'400px', height:'300px'}
+		}
+		
 		$scope.reduceExtend= !$scope.reduceExtend;
+		
 		console.log('click');
 	}
 
