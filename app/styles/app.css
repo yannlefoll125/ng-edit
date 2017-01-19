@@ -44,3 +44,10 @@ li {
 	font-weight: bold;
 }
 
+.s-italic {
+	font-style: italic;
+}
+
+.s-under {
+	text-decoration: underline;
+}
