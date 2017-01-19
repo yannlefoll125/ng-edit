@@ -36,13 +36,22 @@ app.service('textModel', function() {
 
 	this.style = function (arg) {
 		// body...
-		console.log(arg)
-		if (arg='b') {console.log('bold');}
+		console.log(arg);
 
-		if (arg='i') {console.log('italic');}
-
-		if (arg='u') {console.log('under');}
-		
+		switch (arg) {
+			case 'b':
+				console.log('bold');
+				break;
+			case 'i':
+				console.log('italic');
+				break;
+			case 'u':
+				console.log('under');
+				break;
+			default:
+				// statements_def
+				break;
+		}
 		//return true;
 	}
 

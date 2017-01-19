@@ -9,7 +9,7 @@ app.controller('toolBarCtrl', ['$scope','textModel', function($scope,textModel){
 	}
 	
 
-	$scope.underline = function (argument) {
-		textModel('u');
+	$scope.underline = function () {
+		textModel.style('u');
 	}
 }])

@@ -17,7 +17,6 @@ app.directive('editArea', [function() {
 			}
 
 			getSelectedText = function(textarea) {
-				console.log(textarea.value.substring(textarea.selectionStart, textarea.selectionEnd));
 				return textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
 			}
 
