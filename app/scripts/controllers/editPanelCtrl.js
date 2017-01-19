@@ -17,20 +17,25 @@ app.controller('editPanelCtrl', ['$scope', 'textModel', function($scope, textMod
 
 	};
 
+	$scope.br2nl = function(str) {
+		return str.split('<br />').join('\n');
+	}
+
+
 	$scope.modelCallback = function(event) {
 		//console.log('editCtrl: received event from model(' + event + ')');
 		//console.log($scope);
 		switch (event) {
 			case 'text-model':
-				
-				$scope.t = textModel.getHtmlText();
-				break;
+			
+			$scope.t = $scope.br2nl(textModel.getHtmlText());
+			break;
 			default:
 				// statements_def
 				break;
-		}
-	};
+			}
+		};
 
-	textModel.registerObserverCallback($scope.modelCallback);
+		textModel.registerObserverCallback($scope.modelCallback);
 
-}]);
+	}]);

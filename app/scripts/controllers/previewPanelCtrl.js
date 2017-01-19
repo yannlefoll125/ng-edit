@@ -13,8 +13,7 @@ app.controller('previewPanelCtrl', ['$scope', 'textModel', function($scope, text
 		
 		switch(eventName) {
 			case "text-model":
-				//$scope.pdText = textModel.getText();
-				//$scope.pdStyle = textModel.getStyle();
+
 				$scope.htmlPreviewText = textModel.getHtmlText();
 				break;
 
