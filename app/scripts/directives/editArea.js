@@ -18,7 +18,7 @@ app.directive('editArea', [function() {
 					ng-mouseup="mouseup()"
 					ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" 
 					placeholder="Type your text here"
-					class="edit-area-textarea" ng-style="$parent.reduceStyle"></textarea>
+					class="edit-area-textarea" ng-style="reduceStyle"></textarea>
 					`
 	};
 }]);
