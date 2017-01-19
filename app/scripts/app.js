@@ -1,1 +1,1 @@
-var app = angular.module('ngEditApp', []);
+var app = angular.module('ngEditApp', ['ngSanitize']);

@@ -1,0 +1,21 @@
+{
+  "name": "ng-edit",
+  "homepage": "https://github.com/yannlefoll125/ng-edit",
+  "authors": [
+    "yannlefoll125 <yann.lefoll@telecom-bretagne.eu>"
+  ],
+  "description": "",
+  "main": "app/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-sanitize": "^1.6.1"
+  }
+}
