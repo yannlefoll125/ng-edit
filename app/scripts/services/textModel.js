@@ -73,6 +73,11 @@ app.service('textModel', function() {
 		};
 
 		this.applyStyle = function(styleClass) {
+
+			if(this.selectionBounds[0] === this.selectionBounds[1]) {
+				return;
+			}
+
 			let strLength = this.text.length;
 			let beforeStr = this.text.substring(0, this.selectionBounds[0]);
 			let innerStr = this.text.substring(this.selectionBounds[0], this.selectionBounds[1]);
