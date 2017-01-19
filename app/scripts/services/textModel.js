@@ -49,17 +49,17 @@ app.service('textModel', function() {
 
 		switch (arg) {
 			case 'b':
-				console.log('bold');
-				this.applyStyle('s-bold');
-				break;
+			console.log('bold');
+			this.applyStyle('s-bold');
+			break;
 			case 'i':
-				console.log('italic');
-				this.applyStyle('s-italic');
-				break;
+			console.log('italic');
+			this.applyStyle('s-italic');
+			break;
 			case 'u':
-				console.log('under');
-				this.applyStyle('s-under');
-				break;
+			console.log('under');
+			this.applyStyle('s-under');
+			break;
 			default:
 				// statements_def
 				break;
@@ -67,31 +67,42 @@ app.service('textModel', function() {
 		}
 		//return true;
 		this.setSelectionBounds = function(start, end) {
-		console.log("model: setSelectionBounds (" + start + ", " + end + ")");
-		this.selectionBounds = [start, end];
+			console.log("model: setSelectionBounds (" + start + ", " + end + ")");
+			this.selectionBounds = [start, end];
 
-	};
+		};
 
-	this.applyStyle = function(styleClass) {
-		let strLength = this.text.length;
-		let beforeStr = this.text.substring(0, this.selectionBounds[0]);
-		let innerStr = this.text.substring(this.selectionBounds[0], this.selectionBounds[1]);
-		let afterStr = this.text.substring(this.selectionBounds[1], strLength);
+		this.applyStyle = function(styleClass) {
+			let strLength = this.text.length;
+			let beforeStr = this.text.substring(0, this.selectionBounds[0]);
+			let innerStr = this.text.substring(this.selectionBounds[0], this.selectionBounds[1]);
+			let afterStr = this.text.substring(this.selectionBounds[1], strLength);
 
-		console.log("before: " + beforeStr);
-		console.log("inner: " + innerStr);
-		console.log("after: " + afterStr);
+			let spanOpen = `<span class="${styleClass}">`;
+			let spanClose = '</span>';
 
-		let htmlStr = beforeStr + `<span class="${styleClass}">`;
-		htmlStr += innerStr + '</span>' + afterStr;
+			let htmlStr;
 
-		console.log(htmlStr);
+			if(innerStr.indexOf(spanOpen) === -1) {
+				htmlStr = beforeStr + spanOpen + innerStr + spanClose + afterStr;
+			} else {
 
-		this.setText(htmlStr);
+				while(innerStr.indexOf(spanOpen) !== -1) {
+
+					innerStr = innerStr.replace(spanOpen, "");
+					innerStr = innerStr.replace(spanClose, "");
+				}
+				console.log(innerStr);
+
+				htmlStr = beforeStr + innerStr + afterStr;
+			}
+
+
+			this.setText(htmlStr);
 
 
 
-	}
+		}
 
 
-});
+	});
