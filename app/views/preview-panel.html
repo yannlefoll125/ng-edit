@@ -1,8 +1,7 @@
 <div class="preview-panel panel">
-	<h3>Preview panel</h3>
+	<h3 ng-if="!fullscreen" class="panel-title">Preview panel</h3>
 
-	<div class="preview-display" ng-bind-html="htmlPreviewText"></div>
+	<div ng-class="{'preview-display': true, 'preview-display-non-fullscreen' : !fullscreen, 'preview-display-fullscreen': fullscreen}" ng-bind-html="htmlPreviewText"></div>
 
-	<!--<preview-display pd-text="{{pdText}}" pd-style=""></preview-display>-->
 
 </div>

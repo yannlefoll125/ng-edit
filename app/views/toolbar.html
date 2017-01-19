@@ -1,9 +1,17 @@
-<div>
+<div class="toolbar">
+	<div class="toolbar-left">
+		<ul>
+			<li><button ng-click="bold();"><B>G</B></button></li>
+			<li><button ng-click="italic();"><I>I</I></button></li>
+			<li><button ng-click="underline();"><U>S</U></button></li>
+		</ul>
+
+	</div>
+	<div class="toolbar-right">
+		<button class="fullscreen-button" ng-if="!fullscreen" ng-click="onFullscreenClick()">Fullscreen</button>
+		<button class="fullscreen-button" ng-if="fullscreen" ng-click="onFullscreenClick()">Normal view</button>
+	</div>
+
+	<div class="clear"></div>
 	
-	<h3>Toolbar</h3>
-	<ul>
-	<li><button ng-click="bold();"><B>G</B></button></li>
-	<li><button ng-click="italic();"><I>I</I></button></li>
-	<li><button ng-click="underline();"><U>S</U></button></li>
-	</ul>
 </div>
