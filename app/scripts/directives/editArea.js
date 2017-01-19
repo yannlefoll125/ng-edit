@@ -18,7 +18,9 @@ app.directive('editArea', [function() {
 					ng-keyup="$event.keyCode >= 37 && $event.keyCode <= 40 && keyup()" 
 					placeholder="Type your text here"
 					ng-class="{'edit-area-textarea': true, 'edit-area-textarea-non-fullscreen': !fullscreen,
-								'edit-area-textarea-fullscreen': fullscreen}"></textarea>
+								'edit-area-textarea-fullscreen': fullscreen}"
+					spellcheck="false"></textarea>
+
 					`
 	};
 }]);
