@@ -69,7 +69,7 @@ body {
 .preview-display {
 	height: 100%;
 	width: 100%;
-
+	word-wrap: break-word;
 	border-left: none;
 	padding: 5px;
 	box-sizing: border-box;
@@ -137,6 +137,10 @@ li {
 
 .clear {
 	clear: both;
+}
+
+h1 {
+	text-align: center;
 }
 
 h3.panel-title {
