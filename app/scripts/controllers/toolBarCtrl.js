@@ -11,4 +11,8 @@ app.controller('toolBarCtrl', ['$scope','textModel', function($scope,textModel){
 	$scope.underline = function () {
 		textModel.onStyleSelection('u');
 	}
+
+	$scope.clear = function() {
+		textModel.onStyleSelection('c');
+	}
 }])

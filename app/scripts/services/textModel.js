@@ -60,6 +60,10 @@ app.service('textModel', function() {
 			console.log('under');
 			this.applyStyle('s-under');
 			break;
+			case 'c':
+			console.log('clear');
+			this.setText('');
+			break;
 			default:
 				// statements_def
 				break;
