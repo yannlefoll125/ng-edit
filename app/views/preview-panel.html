@@ -1,7 +1,14 @@
-<div class="preview-panel panel">
+<div ng-class="{'preview-panel': true,
+				'panel': true,
+				'both-panels': bothPanels, 
+				'panel-min': minPreview, 
+				'panel-max': maxPreview}">
 	<h3 ng-if="!fullscreen" class="panel-title">Preview panel</h3>
 
-	<div ng-class="{'preview-display': true, 'widget': true, 'preview-display-non-fullscreen' : !fullscreen, 'preview-display-fullscreen': fullscreen}" ng-bind-html="htmlPreviewText"></div>
+	<div ng-class="{'preview-display': true, 
+					'widget': true, 
+					'preview-display-non-fullscreen' : !fullscreen, 
+					'preview-display-fullscreen': fullscreen}" ng-bind-html="htmlPreviewText"></div>
 
 
 </div>

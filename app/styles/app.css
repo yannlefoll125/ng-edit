@@ -49,10 +49,13 @@ body {
 	float: left;
 	margin: 0%;
 	box-sizing: border-box;
-	width: 50%;
+
 	height: 100%;
 	/*border: 1px solid green;*/
 }
+
+
+
 
 .edit-area-textarea {
 	width: 100%;
@@ -138,10 +141,21 @@ li {
 
 h3.panel-title {
 	height: 5%;
-	margin-top: 2.5%;
-	margin-left: 0.5%;
-	margin-bottom: 2.5%;
+	padding-top: 2px;
+	padding-bottom: 2px;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 
+.both-panels {
+	width: 50%;
+}
+
+.panel-min {
+	width: 10%;
+}
+
+.panel-max {
+	width: 90%;
+}
