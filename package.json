@@ -1,0 +1,26 @@
+{
+  "name": "ng-edit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "express": "^4.14.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://yannlefoll125@github.com/yannlefoll125/ng-edit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yannlefoll125/ng-edit/issues"
+  },
+  "homepage": "https://github.com/yannlefoll125/ng-edit#readme"
+}
