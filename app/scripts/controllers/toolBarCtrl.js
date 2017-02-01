@@ -15,4 +15,8 @@ app.controller('toolBarCtrl', ['$scope','textModel', function($scope,textModel){
 	$scope.clear = function() {
 		textModel.onStyleSelection('c');
 	}
+
+	$scope.saveText = function() {
+		textModel.saveTextToDB("dummy title");
+	}
 }])

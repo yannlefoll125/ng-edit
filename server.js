@@ -18,6 +18,18 @@ server.use(express.static(__dirname + "/app"));
 //API ENDPOINTS
 server.post('/saveText', function(req, res) {
 
+	let text = req.body.text;
+	let title = req.body.title;
+
+	console.log('POST request on /saveText. text=' + text + ", title=" + title);
+
+	dbProxy.saveText(title, text);
+
+	res.writeHead(200);
+	res.end();
+
+
+
 });
 
 

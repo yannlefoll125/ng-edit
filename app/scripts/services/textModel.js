@@ -1,4 +1,4 @@
-app.service('textModel', function() {
+app.service('textModel', ['$http', function($http) {
 
 	this.observerCallbacks = [];
 
@@ -114,4 +114,25 @@ app.service('textModel', function() {
 		}
 
 
-	});
+	this.saveTextToDB = function(title) {
+		let postRequest = {
+			method: 'POST',
+			url: 'http://localhost:8080/saveText',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			data: {
+				title: title,
+				text: this.text
+			}
+		};
+
+		$http(postRequest).then(function success(res) {
+			console.log("Save API request succesful");
+
+		}, function error(res) {
+			console.log("Save API request error");
+		})
+	}
+
+	}]);
