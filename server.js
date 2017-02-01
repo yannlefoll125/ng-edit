@@ -33,6 +33,12 @@ server.post('/saveText', function(req, res) {
 
 });
 
+server.get('/getTimestamp', function(req, res) {
+	let timestamp = Math.floor(new Date().getTime() / 1000);
+	res.writeHead(200, 'Content-Type', 'text/plain');
+	res.end(timestamp.toString());
+})
+
 
 server.get('/listSavedTexts', function(req, res) {
 

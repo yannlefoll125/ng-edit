@@ -28,6 +28,21 @@ db.once('open', function() {
 
 //Module functions
 exports.saveText = function(title, text, creationDate) {
+
+
+	/*TextModel.find({creationDate: creationDate}, function(err, docs) {
+		if(err) {
+			console.error.bind(console, "Find Text by creationDate");
+			
+		} else {
+			console.log('Docs found: ' + JSON.stringify(docs));
+		}
+
+
+	});*/
+
+
+
 	let textToSave = new TextModel({
 		title: title,
 		text: text,
