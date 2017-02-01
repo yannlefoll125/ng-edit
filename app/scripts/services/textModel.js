@@ -23,6 +23,9 @@ app.service('textModel', ['$http', function($http) {
 	}
 
 	this.text = "";
+	this.title = "";
+	this.creationDate = Math.floor(new Date().getTime() / 1000);
+
 
 
 	this.selectionBounds = [0, 0];
@@ -42,6 +45,13 @@ app.service('textModel', ['$http', function($http) {
 		this.notifyObservers("text-model");
 	}
 
+	this.getTitle = function() {
+		return this.title;
+	}
+
+	this.setTitle = function(title) {
+		this.title = title;
+	}
 
 	this.onStyleSelection = function (arg) {
 		// body...
@@ -49,26 +59,26 @@ app.service('textModel', ['$http', function($http) {
 
 		switch (arg) {
 			case 'b':
-			console.log('bold');
-			this.applyStyle('s-bold');
-			break;
+				console.log('bold');
+				this.applyStyle('s-bold');
+				break;
 			case 'i':
-			console.log('italic');
-			this.applyStyle('s-italic');
-			break;
+				console.log('italic');
+				this.applyStyle('s-italic');
+				break;
 			case 'u':
-			console.log('under');
-			this.applyStyle('s-under');
-			break;
+				console.log('under');
+				this.applyStyle('s-under');
+				break;
 			case 'c':
-			console.log('clear');
-			this.setText('');
-			break;
+				console.log('clear');
+				this.setText('');
+				break;
 			default:
 				// statements_def
 				break;
 			}
-		}
+		};
 		//return true;
 		this.setSelectionBounds = function(start, end) {
 			console.log("model: setSelectionBounds (" + start + ", " + end + ")");
@@ -111,28 +121,29 @@ app.service('textModel', ['$http', function($http) {
 
 
 
-		}
-
-
-	this.saveTextToDB = function(title) {
-		let postRequest = {
-			method: 'POST',
-			url: 'http://localhost:8080/saveText',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			data: {
-				title: title,
-				text: this.text
-			}
 		};
 
-		$http(postRequest).then(function success(res) {
-			console.log("Save API request succesful");
 
-		}, function error(res) {
-			console.log("Save API request error");
-		})
-	}
+		this.saveTextToDB = function() {
+			let postRequest = {
+				method: 'POST',
+				url: 'http://localhost:8080/saveText',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				data: {
+					title: this.title,
+					text: this.text, 
+					creationDate: this.creationDate
+				}
+			};
+
+			$http(postRequest).then(function success(res) {
+				console.log("Save API request succesful");
+
+			}, function error(res) {
+				console.log("Save API request error");
+			})
+		};
 
 	}]);

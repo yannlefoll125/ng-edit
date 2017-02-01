@@ -17,6 +17,10 @@ app.controller('toolBarCtrl', ['$scope','textModel', function($scope,textModel){
 	}
 
 	$scope.saveText = function() {
-		textModel.saveTextToDB("dummy title");
+
+		textModel.setTitle($scope.title);
+		textModel.saveTextToDB();
+
+		
 	}
 }])

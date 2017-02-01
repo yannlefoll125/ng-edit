@@ -20,10 +20,11 @@ server.post('/saveText', function(req, res) {
 
 	let text = req.body.text;
 	let title = req.body.title;
+	let creationDate = req.body.creationDate;
 
-	console.log('POST request on /saveText. text=' + text + ", title=" + title);
+	console.log('POST request on /saveText. text=' + text + ", title=" + title + ", creationDate=" + creationDate);
 
-	dbProxy.saveText(title, text);
+	dbProxy.saveText(title, text, creationDate);
 
 	res.writeHead(200);
 	res.end();

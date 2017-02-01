@@ -86,12 +86,29 @@ body {
 }
 
 
+.toolbar {
+	height: 32px;
+}
+
 .toolbar-left {
 	float: left;
 }
 
 .toolbar-right {
 	float: right;
+}
+
+
+
+.toolbar-input {
+	height: 24px;
+	margin-top: 3px;
+
+
+}
+
+.save-toolbar {
+	margin-left: 10px;
 }
 
 button {
@@ -102,6 +119,7 @@ button {
 	border-radius:50%;
 	border:none;
 	color:#fff;
+	margin-left: 2px;
 }
 
 button.fullscreen-button, button.maxmin-button {

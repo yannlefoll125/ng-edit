@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 //Model definitions
 var textSchema = mongoose.Schema({
 	title: String,
-	text: String
+	text: String,
+	creationDate: Number
 });
 
 var TextModel = mongoose.model('Text', textSchema);
@@ -26,10 +27,11 @@ db.once('open', function() {
 
 
 //Module functions
-exports.saveText = function(title, text) {
+exports.saveText = function(title, text, creationDate) {
 	let textToSave = new TextModel({
 		title: title,
-		text: text
+		text: text,
+		creationDate: creationDate
 	});
 
 	textToSave.save(function(err) {

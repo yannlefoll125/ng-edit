@@ -5,6 +5,13 @@
 			<li><button ng-click="italic();"><I>I</I></button></li>
 			<li><button ng-click="underline();"><U>U</U></button></li>
 			<li><button ng-click="clear();"><B>C</B></button></li>
+		</ul>
+
+	</div>
+
+	<div class="toolbar-left save-toolbar">
+		<ul>
+			<li><input type="text" ng-model="$parent.title" class="toolbar-input" placeholder="Title" /></li>
 			<li><button ng-click="saveText();"><B>S</B></button></li>
 		</ul>
 

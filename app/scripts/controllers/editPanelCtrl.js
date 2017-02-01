@@ -2,6 +2,8 @@ app.controller('editPanelCtrl', ['$scope', 'textModel', function($scope, textMod
 
 	var scope_ref = $scope;
 
+	//textModel.initCreationDate();
+
 	$scope.textEditTextAreaChanged = function(newValue) {
 
 		textModel.setText(newValue);
