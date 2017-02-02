@@ -37,20 +37,32 @@ exports.saveText = function(title, text, creationDate) {
 		} else {
 			console.log('Docs found: ' + JSON.stringify(docs));
 
+			let textData = {
+				title: title,
+				text: text,
+				creationDate: creationDate
+			};
+
+			
 			if(docs.length == 0) {
-				let textToSave = new TextModel({
-					title: title,
-					text: text,
-					creationDate: creationDate
-				});
+				let textToSave = new TextModel(textData);
 
 				textToSave.save(function(err) {
 					if(err) {
 						console.log("Error while saving: " + err);
 					}
 				});
+				
 			} else if (docs.length === 1){
-				console.log("Doc already exists for this creationDate");
+				console.log("Doc already exists for this creationDate, updating");
+				TextModel.update({creationDate: creationDate}, textData, function(err, raw) {
+					if(err) {
+						console.error.bind(console, "Error while updating");
+					}
+
+					console.log("Update raw: " + JSON.stringify(raw));
+				});
+
 			} else {
 				console.error("More than 1 doc exist for this creationDate");
 			}
