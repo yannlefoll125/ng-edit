@@ -30,30 +30,38 @@ db.once('open', function() {
 exports.saveText = function(title, text, creationDate) {
 
 
-	/*TextModel.find({creationDate: creationDate}, function(err, docs) {
+	TextModel.find({creationDate: creationDate}, function(err, docs) {
 		if(err) {
 			console.error.bind(console, "Find Text by creationDate");
 			
 		} else {
 			console.log('Docs found: ' + JSON.stringify(docs));
+
+			if(docs.length == 0) {
+				let textToSave = new TextModel({
+					title: title,
+					text: text,
+					creationDate: creationDate
+				});
+
+				textToSave.save(function(err) {
+					if(err) {
+						console.log("Error while saving: " + err);
+					}
+				});
+			} else if (docs.length === 1){
+				console.log("Doc already exists for this creationDate");
+			} else {
+				console.error("More than 1 doc exist for this creationDate");
+			}
 		}
 
 
-	});*/
-
-
-
-	let textToSave = new TextModel({
-		title: title,
-		text: text,
-		creationDate: creationDate
 	});
 
-	textToSave.save(function(err) {
-		if(err) {
-			console.log("Error while saving: " + err);
-		}
-	});
+
+
+	
 
 
 };
