@@ -41,7 +41,15 @@ server.get('/getTimestamp', function(req, res) {
 
 
 server.get('/listSavedTexts', function(req, res) {
-
+	dbProxy.getSavedTextList(function(err, docs) {
+		if(err) {
+			res.writeHead(404);
+			res.end();
+		} else {
+			res.writeHead(200, 'Content-Type', 'application/json');
+			res.end(docs);
+		}
+	});
 });
 
 server.get('/loadText', function(req, res) {

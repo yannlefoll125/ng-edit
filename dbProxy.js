@@ -52,7 +52,7 @@ exports.saveText = function(title, text, creationDate) {
 						console.log("Error while saving: " + err);
 					}
 				});
-				
+
 			} else if (docs.length === 1){
 				console.log("Doc already exists for this creationDate, updating");
 				TextModel.update({creationDate: creationDate}, textData, function(err, raw) {
@@ -77,6 +77,10 @@ exports.saveText = function(title, text, creationDate) {
 
 
 };
+
+exports.getSavedTextList = function(callback) {
+	TextModel.find({}, callback);
+}
 
 
 
