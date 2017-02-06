@@ -12,7 +12,8 @@
     "grunt": "^1.0.1",
     "grunt-express-server": "^0.5.3",
     "grunt-mongo-bin": "^0.1.0",
-    "mongoose": "^4.8.1"
+    "mongoose": "^4.8.1",
+    "grunt-mongo-drop-yann": "C:\\Users\\Yann\\git\\npm_custom\\grunt-mongo-drop-yann"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -18,12 +18,28 @@ module.exports= function(grunt) {
 					script: 'server.js'
 				}
 			}
+		},
+		'mongo-drop': {
+			options: {
+
+				dbname: 'ng-edit',
+				host: 'localhost'
+
+			}
+		},
+		mongobin: {
+			options: {
+				host: 'localhost',
+				port: '27017',
+				db: 'ng-edit'
+			},
+			import_two_entries: {
+
+			}
+
 		}
 	});
 
-	function populate(database, callback) {
-
-	}
 
 	function methodWrapper(action, database, callback) {
 
@@ -40,7 +56,7 @@ module.exports= function(grunt) {
 
 	function dbAction(action, done) {
 		mongoose.connect('mongodb://localhost/ng-edit');
-		
+
 		mongoose.connection.on('open', function dbActionCB() {
 			methodWrapper(action, mongoose.connection.db, function(err) {
 				if(err) {
@@ -98,11 +114,14 @@ module.exports= function(grunt) {
 // 			});
 // 		});
 
-		
-	});
+
+});
 
 	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-mongo-drop-yann');
+	grunt.loadNpmTasks('grunt-mongo-bin');
 
-	grunt.registerTask('default', ['reset-db', 'express:dev']);
+	grunt.registerTask('drop-db', ['mongo-drop']);
+	grunt.registerTask('default', ['drop-db', 'express:dev']);
 
 };

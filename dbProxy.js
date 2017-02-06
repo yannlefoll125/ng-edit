@@ -15,7 +15,10 @@ var TextModel = mongoose.model('Text', textSchema);
 
 
 //Connection
+
 mongoose.connect('mongodb://localhost/ng-edit');
+
+
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error: '));
